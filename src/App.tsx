@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import { Outlet, Link } from "react-router-dom";
+import { ProjectsPage, ProjectsPropsType } from './projects/ProjectsPage';
+// start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function App() {
+  const data: ProjectsPropsType = {
+    name: "Himanshu",
+    hobbies: "Hiking"
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blogs">Blogs</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+        </ul>
+      </nav>
+      <h1>Hello, React!</h1>
+      <ProjectsPage name={data.name} hobbies={data.hobbies} />
     </div>
   );
 }
 
 export default App;
+
+//https://handsonreact.com/docs/labs/react-tutorial-typescript
