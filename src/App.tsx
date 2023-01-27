@@ -1,6 +1,7 @@
 import './App.css';
 import { Outlet, Link } from "react-router-dom";
 import { ProjectsPage, ProjectsPropsType } from './projects/ProjectsPage';
+import  Clock from './projects/Clock'; 
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function App() {
   const data: ProjectsPropsType = {
@@ -8,6 +9,8 @@ function App() {
     hobbies: "Hiking"
   };
   return (
+    <>
+    <h1>I am Clock <Clock /></h1>
     <div className="App">
       <nav>
         <ul>
@@ -20,11 +23,14 @@ function App() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/lift">Lift</Link>
+          </li>
         </ul>
       </nav>
       <h1>Hello, React!</h1>
       <ProjectsPage name={data.name} hobbies={data.hobbies} />
-    </div>
+    </div></>
   );
 }
 
