@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Appd from './App';
@@ -8,6 +8,7 @@ import Blog from './page/Contact';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLiftUpState } from './page/Blogs';
+import Effect from './page/useEffect'; 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -20,6 +21,7 @@ root.render(
           <Route path="blogs" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="lift" element={<AppLiftUpState />} />
+          <Route path="effect" element={<Effect />} />
           <Route path="*" element={<NoPage />} />
       </Routes>
     </BrowserRouter>
