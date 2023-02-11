@@ -32,11 +32,17 @@ function App() {
             <li>
               <Link to="/effect">Use Effect</Link>
             </li>
+            <li>
+              <Link to="/clildren">Clihdren</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>
         <UserContext.Provider value={user}>
-          <ProjectsPage name={data.name} hobbies={data.hobbies} />
+          <ProjectsPage name={data.name} hobbies={data.hobbies} >
+            <div>{true}</div>
+            <div>{true}</div>
+            </ProjectsPage>
         </UserContext.Provider>
       </div></>
   );

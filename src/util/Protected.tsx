@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-
+import { Children } from 'react';
 type ProtectedPropsType = {
     isLoggedIn: boolean,
     children: any

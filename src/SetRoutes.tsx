@@ -10,6 +10,7 @@ import Effect from './page/useEffect';
 import { useState } from "react";
 import Protected from './util/Protected';
 import Contact from './page/Contact';
+import Children from './projects/Children';
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function SetRoutes() {
 
@@ -40,6 +41,7 @@ function SetRoutes() {
                 <Route path="lift" element={<AppLiftUpState />} />
                 <Route path="effect" element={<Effect />} />
                 <Route path="*" element={<NoPage />} />
+                <Route path="/clildren" element={<Children />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
         </BrowserRouter>

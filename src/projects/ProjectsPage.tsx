@@ -3,13 +3,15 @@ import { MOCK_PROJECTS } from './MockProjects';
 import './ProjectPage.css';
 import ShowProject from '../showproject/ShowProject';
 import ClassComponent from '../classcomponent/ClassComponent';
+import { Children } from 'react';
+import { PropsWithChildren } from 'react';
 
 type ProjectsPropsType = {
     name: string,
     hobbies: string
 };
 
-function ProjectsPage({ name, hobbies }: ProjectsPropsType) {
+function ProjectsPage(props: PropsWithChildren<ProjectsPropsType>) {
     let passProps = {
         namec: "My Name",
         hobbiesc: " Play"
@@ -31,11 +33,12 @@ function ProjectsPage({ name, hobbies }: ProjectsPropsType) {
         <p>You clicked {count} times</p>
         <button onClick={() => setCount(count + 1)}>Count State</button>
 
-        <h1 className='headername'>{name}, {hobbies}</h1>
+        <h1 className='headername'>{props.name}, {props.hobbies}</h1>
         <h1>Projects</h1>
         <ul>
             {MOCK_PROJECTS.map((project) => <ShowProject projectname={project} />)}
         </ul>
+        <h1>Total clildren: {Children.count(props.children)}</h1>
     </>);
 }
 
