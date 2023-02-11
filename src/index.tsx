@@ -1,30 +1,16 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Appd from './App';
-import NoPage from './page/NoPage';
-import Contact from './page/Contact';
-import Blog from './page/Contact';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AppLiftUpState } from './page/Blogs';
-import Effect from './page/useEffect'; 
+import SetRoutes from './SetRoutes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Appd />} />
-          <Route path="blogs" element={<Blog />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="lift" element={<AppLiftUpState />} />
-          <Route path="effect" element={<Effect />} />
-          <Route path="*" element={<NoPage />} />
-      </Routes>
-    </BrowserRouter>
+    <SetRoutes />
   </React.StrictMode>
 );
 
