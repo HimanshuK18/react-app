@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "typescript": "^4.9.4",
@@ -24,7 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "image_build" : "npm run build && docker build -t react_image .",
+    "see_image": "docker run -it react_image sh",
+    "run_image": "docker run -p 3000:3000 react_image",
+    "fix-lint": "npx eslint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +50,5 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.8.1"
   }
 }
