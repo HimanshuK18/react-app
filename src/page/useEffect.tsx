@@ -5,17 +5,21 @@ function Effect() {
     const catService = new CatService();
     let [employees, setData] = useState<any>([]);
     useEffect(() => {
-        async function fetchData() {
+        (async () => {
             const response = await catService.getCatData();
-            let  fetchedData = response.data;
+            let fetchedData = response.data;
             setData(employees = fetchedData);
+        })();
+
+        return () => {
+            console.log('clean up')
         }
-        fetchData();
+
     }, []);
     return (<>
         <h6>Use Effcet Demo</h6>
         <div>
-            {employees.map((data: any,index: Key) => <div key={index}>{data.name}</div>)}
+            {employees.map((data: any, index: Key) => <div key={index}>{data.name}</div>)}
         </div>
     </>);
 }

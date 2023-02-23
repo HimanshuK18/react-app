@@ -11,6 +11,7 @@ import { useState } from "react";
 import Protected from './util/Protected';
 import Contact from './page/Contact';
 import Children from './projects/Children';
+import RegisterYourCatForm from './projects/FormSubmit';
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function SetRoutes() {
 
@@ -28,7 +29,7 @@ function SetRoutes() {
             {isLoggedIn ? (
                 <button onClick={logOut}>Logout</button>
             ) : (
-                <button onClick={logIn}>Login</button>
+                <button onClick={logIn} >Login</button>
             )}
             <Routes>
                 <Route path="/" element={<Appd />} />
@@ -43,6 +44,7 @@ function SetRoutes() {
                 <Route path="*" element={<NoPage />} />
                 <Route path="/clildren" element={<Children />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/cats" element={<RegisterYourCatForm />} />
             </Routes>
         </BrowserRouter>
     );

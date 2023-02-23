@@ -1,0 +1,140 @@
+
+@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
+@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
+    .App {
+        font-family: sans-serif;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      
+      form {
+        border: 1px solid lightgray;
+        padding: 20px;
+        padding-top: 10px;
+        border-radius: 5px;
+      }
+      
+      form label {
+        display: inline-block;
+        margin-top: 10px;
+        width: 100px;
+        vertical-align: top;
+      }
+      
+      form label::before,
+      form button::before {
+        content: "\A";
+      }
+      
+      form button {
+        display: block;
+        margin-top: 30px;
+      }
+      
+      form input,
+      form select,
+      form textarea {
+        display: inline-block;
+        width: 200px;
+        max-width: 200px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+      
+      form textarea {
+        min-height: 100px;
+      }}
+@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
+    .App {
+        font-family: sans-serif;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      
+      form {
+        border: 1px solid lightgray;
+        padding: 20px;
+        padding-top: 10px;
+        border-radius: 5px;
+      }
+      
+      form label {
+        display: inline-block;
+        margin-top: 10px;
+        width: 100px;
+        vertical-align: top;
+      }
+      
+      form label::before,
+      form button::before {
+        content: "\A";
+      }
+      
+      form button {
+        display: block;
+        margin-top: 30px;
+      }
+      
+      form input,
+      form select,
+      form textarea {
+        display: inline-block;
+        width: 200px;
+        max-width: 200px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+      
+      form textarea {
+        min-height: 100px;
+      }}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+    .App {
+        font-family: sans-serif;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      
+      form {
+        border: 1px solid lightgray;
+        padding: 20px;
+        padding-top: 10px;
+        border-radius: 5px;
+      }
+      
+      form label {
+        display: inline-block;
+        margin-top: 10px;
+        width: 100px;
+        vertical-align: top;
+      }
+      
+      form label::before,
+      form button::before {
+        content: "\A";
+      }
+      
+      form button {
+        display: block;
+        margin-top: 30px;
+      }
+      
+      form input,
+      form select,
+      form textarea {
+        display: inline-block;
+        width: 200px;
+        max-width: 200px;
+        margin-top: 10px;
+        box-sizing: border-box;
+      }
+      
+      form textarea {
+        min-height: 100px;
+      }}
+    

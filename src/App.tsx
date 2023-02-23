@@ -1,8 +1,8 @@
 import './App.css';
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ProjectsPage, ProjectsPropsType } from './projects/ProjectsPage';
 import Clock from './projects/Clock';
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import { UserContext } from './projects/Context';
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function App() {
@@ -10,6 +10,8 @@ function App() {
     name: "Himanshu",
     hobbies: "Hiking"
   };
+
+
   const [user, setUser] = useState("Jesse Hall");
   return (
     <>
@@ -18,10 +20,10 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" aria-label='this home'>Home</Link>
             </li>
             <li>
-              <Link to="/blogs">Blogs</Link>
+              <Link to="/blogs" aria-label='this is blogs'>Blogs</Link>
             </li>
             <li>
               <Link to="/contact">Contact</Link>
@@ -34,6 +36,9 @@ function App() {
             </li>
             <li>
               <Link to="/clildren">Clihdren</Link>
+            </li>
+            <li>
+              <Link to="/cats">Form cates</Link>
             </li>
           </ul>
         </nav>
