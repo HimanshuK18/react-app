@@ -9,8 +9,7 @@ console.log(value);
     setInterval(tick, 1000);
     return (
         <div>
-            <h4>Hello, world!</h4>
-            <h4>It is {value.date.toLocaleTimeString()}.</h4>
+            <h5>It is {value.date.toLocaleTimeString()}.</h5>
         </div>
     );
 }

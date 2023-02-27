@@ -17,7 +17,8 @@ function ProjectsPage(props: PropsWithChildren<ProjectsPropsType>) {
         hobbiesc: " Play"
     };
     const shoot = (data: string, event: any) => {
-        alert('yes shoot' + data)
+        console.log(event);
+        alert('yes shoot' + data);
     }
     const [count, setCount] = useState(22);
    // The array destructuring syntax lets us give different names to the state variables we 

@@ -31,9 +31,9 @@ const Modal = (props: ModalProps) => {
         , document.body);
 }
 
-function Component() {
+export default function ComponentModal() {
     const [open, setOpen] = useState(false);
-    return (
+    return (<>
         <div className="component">
             <button onClick={() => setOpen(true)}>Open Modal</button>
             <Modal
@@ -42,5 +42,6 @@ function Component() {
                 onClose={() => setOpen(false)}
             />
         </div>
+        </>
     )
 }

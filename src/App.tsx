@@ -15,7 +15,7 @@ function App() {
   const [user, setUser] = useState("Jesse Hall");
   return (
     <>
-      <h1>I am Clock <Clock /></h1>
+      <h5>I am Clock <Clock /></h5>
       <div className="App">
         <nav>
           <ul>
@@ -39,6 +39,9 @@ function App() {
             </li>
             <li>
               <Link to="/cats">Form cates</Link>
+            </li>
+            <li>
+              <Link to="/tab">Tabs</Link>
             </li>
           </ul>
         </nav>

@@ -1,4 +1,4 @@
-import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from "react";
+import { JSXElementConstructor, Key, useEffect, useState } from "react";
 import { CatService } from '../services/catService';
 
 function Effect() {

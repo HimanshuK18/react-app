@@ -7,11 +7,14 @@ import Login from './page/Login';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppLiftUpState } from './page/Blogs';
 import Effect from './page/useEffect';
-import { useState } from "react";
+import { lazy, useState } from "react";
 import Protected from './util/Protected';
-import Contact from './page/Contact';
 import Children from './projects/Children';
 import RegisterYourCatForm from './projects/FormSubmit';
+
+const Contact = lazy(() => import('./page/Contact'));
+const TabApp = lazy(() => import('./projects/Tab/Tab'))
+
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function SetRoutes() {
 
@@ -22,6 +25,7 @@ function SetRoutes() {
 
     const logOut = () => {
         setisLoggedIn(false);
+        localStorage.setItem('authenticated', "false");
     };
 
     return (
@@ -45,6 +49,7 @@ function SetRoutes() {
                 <Route path="/clildren" element={<Children />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/cats" element={<RegisterYourCatForm />} />
+                <Route path="/tab" element={<TabApp />} />
             </Routes>
         </BrowserRouter>
     );
