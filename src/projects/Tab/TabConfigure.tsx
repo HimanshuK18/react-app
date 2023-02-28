@@ -11,7 +11,7 @@ function TabContent(props: PropsWithChildren<TabContentProps>) {
         props.activeTab === props.id ? <div className="TabContent">
             {props.children}
         </div>
-            : <div></div>
+            : null
     );
 };
 

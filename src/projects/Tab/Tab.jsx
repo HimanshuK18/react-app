@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { TabNavItem } from './TabConfigure';
 import './tab.css';
-import Clock  from '../Clock';
+import Clock from '../Clock';
 
 
 const Tabs = (props) => {

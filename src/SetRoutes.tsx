@@ -23,17 +23,20 @@ function SetRoutes() {
         {
             tabname: "Tab 1",
             tabComponentName: "Clock",
-            tabComponentPath: "../Clock"
+            tabComponentPath: "../Clock",
+            tabContent:"<div>I am tab 1</div>"
         },
         {
             tabname: "Tab 2",
             tabComponentName: "FirstTab",
-            tabComponentPath: "./TabShow/FirstTab"
+            tabComponentPath: "./TabShow/FirstTab",
+            tabContent:"<div>I am tab 4</div>"
         },
         {
             tabname: "Tab 3",
             tabComponentName: "SecondTab",
-            tabComponentPath: './TabShow/SecondTab'
+            tabComponentPath: './TabShow/SecondTab',
+            tabContent:"<div>I am tab 3</div>"
         }
     ];
 

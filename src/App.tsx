@@ -41,10 +41,10 @@ function App() {
               <Link to="/cats">Form cates</Link>
             </li>
             <li>
-              <Link to="/tab">Tabs</Link>
+              <Link to="/tab">Tabs Children</Link>
             </li>
             <li>
-              <Link to="/tab2">Tabs 2</Link>
+              <Link to="/tab2">Tabs Import</Link>
             </li>
             <li>
               <Link to="/tabs">Dynamic Import</Link>
