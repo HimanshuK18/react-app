@@ -11,12 +11,31 @@ import { lazy, useState } from "react";
 import Protected from './util/Protected';
 import Children from './projects/Children';
 import RegisterYourCatForm from './projects/FormSubmit';
+import DynamicComponent from './projects/Tab/DynamicImport';
 
 const Contact = lazy(() => import('./page/Contact'));
-const TabApp = lazy(() => import('./projects/Tab/Tab'))
+const TabApp = lazy(() => import('./projects/Tab/Tab'));
+const AppTab2 = lazy(() => import('./projects/Tab2/ShowTabs'));
 
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function SetRoutes() {
+    const TabBootData: any[] = [
+        {
+            tabname: "Tab 1",
+            tabComponentName: "Clock",
+            tabComponentPath: "../Clock"
+        },
+        {
+            tabname: "Tab 2",
+            tabComponentName: "FirstTab",
+            tabComponentPath: "./TabShow/FirstTab"
+        },
+        {
+            tabname: "Tab 3",
+            tabComponentName: "SecondTab",
+            tabComponentPath: './TabShow/SecondTab'
+        }
+    ];
 
     const [isLoggedIn, setisLoggedIn] = useState(false);
     const logIn = () => {
@@ -49,7 +68,9 @@ function SetRoutes() {
                 <Route path="/clildren" element={<Children />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/cats" element={<RegisterYourCatForm />} />
-                <Route path="/tab" element={<TabApp />} />
+                <Route path="/tab" element={<TabApp data = { TabBootData }/>} />
+                <Route path="/tab2" element={<AppTab2  />} />
+                <Route path="/tabs" element={<DynamicComponent />} />
             </Routes>
         </BrowserRouter>
     );

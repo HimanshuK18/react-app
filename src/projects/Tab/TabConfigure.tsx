@@ -1,9 +1,25 @@
 import React from "react";
+import { PropsWithChildren } from 'react';
+type TabContentProps =
+    {
+        id: string,
+        activeTab: string,
+        children: any
+    }
+function TabContent(props: PropsWithChildren<TabContentProps>) {
+    return (
+        props.activeTab === props.id ? <div className="TabContent">
+            {props.children}
+        </div>
+            : <div></div>
+    );
+};
+
 type TabNavItemProps = {
     id: string,
     title: string,
     activeTab: string,
-    setActiveTab: (tab: any) => void
+    setActiveTab: (tab: any) => void,
 };
 
 const TabNavItem = (props: TabNavItemProps) => {
@@ -13,25 +29,11 @@ const TabNavItem = (props: TabNavItemProps) => {
     return (
         <li onClick={handleClick} className={props.activeTab === props.id ? "active" : ""}>
             {props.title}
+            <TabContent id="Tab 1" activeTab={props.activeTab}>
+            </TabContent>
         </li>
     );
 };
 
 
-type TabContentProps =
-    {
-        id: string, 
-        activeTab: string, 
-        children: any
-    }
-
-const TabContent = (props: TabContentProps) => {
-    return (
-        props.activeTab === props.id ? <div className="TabContent">
-            {props.children}
-        </div>
-            : null
-    );
-};
-
-export { TabContent, TabNavItem };
+export { TabNavItem };

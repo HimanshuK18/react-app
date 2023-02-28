@@ -43,6 +43,12 @@ function App() {
             <li>
               <Link to="/tab">Tabs</Link>
             </li>
+            <li>
+              <Link to="/tab2">Tabs 2</Link>
+            </li>
+            <li>
+              <Link to="/tabs">Dynamic Import</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>
