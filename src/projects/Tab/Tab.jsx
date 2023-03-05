@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { TabNavItem } from './TabConfigure';
 import './tab.css';
-import Clock from '../Clock';
 
 
 const Tabs = (props) => {
     const [activeTab, setActiveTab] = useState(props.data[0].tabname);
+    const [Component, setComponent] = useState(null);
     useEffect(() => {
         let AllComponents = [];
         async function allComponents() {
             return props.data.map(async (tab) => {
-                const componentModule = await import(`${tab.tabComponentPath}`);
+                const componentModule = await import(`./${tab.tabComponentPath}`);
                 return componentModule;
             })
         };
@@ -34,10 +34,9 @@ const Tabs = (props) => {
                             id={tab.tabname}
                             activeTab={activeTab}
                             setActiveTab={setActiveTab} />
-
                     )}
             </ul>
-            <Clock></Clock>
+            {Component && <Component />}
         </div>
     </>);
 };

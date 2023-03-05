@@ -1,4 +1,5 @@
 const path = require('path');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -13,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|tsx|ts)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -22,9 +23,20 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.css$/,
+        use: ['babel-loader', 'css-loader']
+      }
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx','.tsx'],
   },
+  plugins: [
+    new CompressionPlugin({
+      algorithm: 'gzip',
+      test: /\.(js|css|html|svg)$/,
+      minRatio: 0.8,
+    }),
+  ],
 };

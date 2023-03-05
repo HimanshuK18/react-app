@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import SetRoutes from './SetRoutes';
+import 'core-js/features/promise';
+import 'core-js/features/array/from';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

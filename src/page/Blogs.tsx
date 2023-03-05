@@ -28,17 +28,31 @@ function TodoList() {
 
 function AddTodo() {
   function handleSubmit(event: any) {
+    const form = document.forms;
+    const valid = form[0].checkValidity();
     event.preventDefault();
     const todo = event.target.elements.todo.value;
-    console.log(todo);
+    console.log(todo  + valid);
   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" id="todo" />
+  function handleSubmit2(event: any) {
+    const form = document.forms;
+    const valid = form[0].checkValidity();
+    event.preventDefault();
+    const todo = event.target.elements.todo.value;
+    console.log(todo  + valid);
+  }
+
+  return (<>
+    <form onSubmit={handleSubmit} id="form1">
+      <input type="text" id="todo" required />
       <button type="submit">Add Todo</button>
     </form>
-  );
+    <form onSubmit={handleSubmit2} id="form2">
+    <input type="text" id="todo" required />
+    <button type="submit">Add Todo</button>
+  </form>
+  </>  );
 }
 
 const Blogs = () => {
