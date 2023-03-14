@@ -12,6 +12,8 @@ import Protected from './util/Protected';
 import Children from './projects/Children';
 import RegisterYourCatForm from './projects/FormSubmit';
 import DynamicComponent from './projects/Tab/DynamicImport';
+import Counter from './projects/Age';
+import CounterRedux from './projects/Counter';
 
 const Contact = lazy(() => import('./page/Contact'));
 const TabApp = lazy(() => import('./projects/Tab/Tab'));
@@ -74,6 +76,8 @@ function SetRoutes() {
                 <Route path="/tab" element={<TabApp data = { TabBootData }/>} />
                 <Route path="/tab2" element={<AppTab2  />} />
                 <Route path="/tabs" element={<DynamicComponent />} />
+                <Route path="/reducer" element={<Counter />} />
+                <Route path="/reducerredux" element={<CounterRedux />} />
             </Routes>
         </BrowserRouter>
     );

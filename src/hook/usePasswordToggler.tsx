@@ -8,7 +8,8 @@ export const usePasswordToggler = () => {
             setType('text');
             setPasswordVisibility(!passwordVisibility);
         } else if (type === 'text') {
-            setType('password'); setPasswordVisibility(!passwordVisibility);
+            setType('password'); 
+            setPasswordVisibility(!passwordVisibility);
         }
     }; 
     return {

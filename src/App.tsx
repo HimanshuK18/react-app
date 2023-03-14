@@ -49,6 +49,12 @@ function App() {
             <li>
               <Link to="/tabs">Dynamic Import</Link>
             </li>
+            <li>
+              <Link to="/reducer">State Reducer</Link>
+            </li>
+            <li>
+              <Link to="/reducerredux">Redux Reducer</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>

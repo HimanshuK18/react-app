@@ -1,4 +1,6 @@
 import { useReducer } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
 function reducerFunction(state: any, action: any) {
     if (action.type === 'incremented_age') {
@@ -22,6 +24,7 @@ export default function Counter() {
     //The dispatch function returned by useReducer lets you update the state to a different 
     //value and trigger a re-render. Update state and rerender
     const [state, dispatch] = useReducer(reducerFunction, { age: 42 });
+    const count = useSelector((state: any) => state.counter.value);
 
     return (
         <>
@@ -31,6 +34,10 @@ export default function Counter() {
                 Increment age
             </button>
             <p>Hello! You are {state.age}.</p>
+            <h2>The counter shows the value picked from the Redux Counter </h2>
+            
+            <h3 >The value is: <h2 style={{ color: "red" }}> {count}</h2></h3>
+            <Link to="/">Go Home</Link>
         </>
     );
 }

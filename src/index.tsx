@@ -5,6 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import SetRoutes from './SetRoutes';
 import 'core-js/features/promise';
 import 'core-js/features/array/from';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +14,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <SetRoutes />
+     <Provider store={store}>
+      <SetRoutes />
+     </Provider>
   </React.StrictMode>
 );
 
