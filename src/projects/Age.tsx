@@ -38,6 +38,7 @@ export default function Counter() {
             
             <h3 >The value is: <h2 style={{ color: "red" }}> {count}</h2></h3>
             <Link to="/">Go Home</Link>
+            <p>&#128507;</p>
         </>
     );
 }

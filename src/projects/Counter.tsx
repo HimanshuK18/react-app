@@ -1,18 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { increment, decrement } from '../redux/store';
+import { increment, decrement } from "../redux/counterSlice";
+import { giveEmoji } from "../redux/addEmojiSlice";
 
 function CounterRedux() {
   const count = useSelector((store: any) => store.counter.value);
+  const emoji = useSelector((store: any) => store.emoji.emoji);
   const dispatch = useDispatch();
-
+  const Increase = () => {
+    dispatch(increment());
+    dispatch(giveEmoji());
+  }
+  const Decrease = () => {
+    dispatch(increment());
+    dispatch(giveEmoji());
+  }
   return (<>
     <div>
-    <Link to="/">Go Home</Link>
+      <Link to="/">Go Home</Link>
       <h1>Count: {count}</h1>
-      <button onClick={() => dispatch(increment())}>+1</button>
-      <button onClick={() => dispatch(decrement())}>-1</button>
+      <button onClick={() => Increase()}>+1</button>
+      <button onClick={() => Decrease()}>-1</button>
     </div>
+    <div dangerouslySetInnerHTML={{__html: emoji}} />
   </>)
 }
 

@@ -1,25 +1,11 @@
-import { configureStore, createSlice, combineReducers  } from '@reduxjs/toolkit'
-
-const counterSlice = createSlice({
-  name: 'counter',
-  initialState: {
-    value: 0,
-  },
-  reducers: {
-    increment(state) {
-      state.value += 1
-    },
-    decrement(state) {
-      state.value -= 1
-    },
-  },
-});
-
-export const { increment, decrement } = counterSlice.actions;
+import { configureStore, combineReducers  } from '@reduxjs/toolkit'
+import { counterSlice } from './counterSlice';
+import { emojiSlice } from "./addEmojiSlice";
 
 const store = configureStore({
   reducer: combineReducers({
-    counter: counterSlice.reducer
+    counter: counterSlice.reducer,
+    emoji: emojiSlice.reducer
   }),
 });
 
