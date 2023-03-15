@@ -1,20 +1,18 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14-alpine
+FROM node:18.12.1-buster-slim AS nodejs
 
-# Set the working directory to /app
 WORKDIR /app
+COPY package.json package-lock.json ./
 
-# Copy package.json and package-lock.json to the container
-COPY package*.json ./
+COPY build/ build/
 
-# Install dependencies
-RUN npm ci --only=production
 
-# Copy the rest of the app files to the container
-COPY . .
 
-# Set the command to start the app
-CMD [ "npm", "start" ]
 
-# Expose the port on which the app will run
-EXPOSE 3000
+FROM nginx:1.23.2-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=nodejs app/build /usr/share/nginx/html
+RUN touch /var/run/nginx.pid
+RUN chown -R nginx:nginx /var/run/nginx.pid /usr/share/nginx/html /var/cache/nginx /var/log/nginx /etc/nginx/conf.d
+USER nginx
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
