@@ -7,14 +7,12 @@ function Effect() {
     useEffect(() => {
         (async () => {
             const response = await catService.getCatData();
-            let fetchedData = response.data;
-            setData(employees = fetchedData);
+            setData(employees = response.data);
         })();
 
         return () => {
             console.log('clean up')
         }
-
     }, []);
     return (<>
         <h6>Use Effcet Demo</h6>

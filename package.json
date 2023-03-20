@@ -33,9 +33,9 @@
     "buildB": "webpack --mode production",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "image_build": "npm run build && docker build -t react_image .",
+    "image_build": "npm run build && docker build -t react-app-my .",
     "see_image": "docker run -it react_image sh",
-    "run_image": "docker run -p 3000:3000 react_image",
+    "run_image": "docker run -d --name react-app-my -p 8080:8080 react-app-my",
     "fix-lint": "npx eslint --fix"
   },
   "eslintConfig": {

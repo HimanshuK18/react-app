@@ -55,6 +55,12 @@ function App() {
             <li>
               <Link to="/reducerredux">Redux Reducer</Link>
             </li>
+            <li>
+              <Link to="/memorized">Memorized</Link>
+            </li>
+            <li>
+              <Link to="/Responsive">Responsive</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>
