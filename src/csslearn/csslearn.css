@@ -1,0 +1,74 @@
+p {
+    text-align: center;
+    color: red;
+  }
+  /* this is element selector */
+
+  #para1 {
+  text-align: center;
+  color: red;
+}
+/* this is id selector write a hash (#) character, */
+
+.center {
+    text-align: center;
+    color: red;
+  } 
+  /* The class selector selects HTML elements with a specific class name. write a period (.) character,*/
+
+  p.center {
+    text-align: center;
+    color: red;
+  }
+  /* it is combinig two selectors elment and class selector*/
+  * {
+    text-align: center;
+    color: blue;
+  }
+   /*  '*'  universal selector (*) selects all HTML elements on the page.*/
+
+   h1, h2, p {
+    text-align: center;
+    color: red;
+  }
+  /* we have grouped 3 selectors or elements */
+
+  
+a:link {
+    color: #FF0000;
+  }
+  /* unvisited link  Pseudo-classe  define a special state of an element.*/
+  
+  a:visited {
+    color: #00FF00;
+  }
+  /* visited link  Pseudo-classe  define a special state of an element.*/
+
+  
+a:hover {
+    color: #FF00FF;
+  }
+  /* mouse over link Pseudo-classe define a special state of an element. */
+
+  p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+  }
+  /* A CSS pseudo-element is used to style specified parts of an element.*/
+
+  p.intro::first-letter {
+    color: #ff0000;
+    font-size: 200%;
+  }
+  /*the first letter of paragraphs with class="intro", in red and in a larger size.*/
+
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  a[target] {
+    background-color: yellow;
+  }
+  /* The [attribute] selector is used to select elements with a specified attribute.*/
