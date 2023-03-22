@@ -16,6 +16,7 @@ import Counter from './projects/Age';
 import CounterRedux from './projects/Counter';
 import CounterMemorized from './projects/useMemo';
 import Responsive from './responsive/responsive';
+import CreatList  from './projects/createList';
 
 const Contact = lazy(() => import('./page/Contact'));
 const TabApp = lazy(() => import('./projects/Tab/Tab'));
@@ -81,7 +82,8 @@ function SetRoutes() {
                 <Route path="/reducer" element={<Counter />} />
                 <Route path="/reducerredux" element={<CounterRedux />} />
                 <Route path="/memorized" element={<CounterMemorized />} />Responsive
-                <Route path="/Responsive" element={<Responsive />} />
+                <Route path="/Responsive" element={<Responsive />} /> 
+                <Route path="/createlist" element={<CreatList />} />
 
             </Routes>
         </BrowserRouter>
