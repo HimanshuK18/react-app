@@ -64,6 +64,9 @@ function App() {
             <li>
               <Link to="/createlist">Create List</Link>
             </li>
+            <li>
+              <Link to="/grid">Grid</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>

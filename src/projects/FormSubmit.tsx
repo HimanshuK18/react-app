@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import "./FormSubmit.css";
 
 const COLORS = ['white', 'red', 'blue', 'black', 'cream'];
@@ -7,13 +7,11 @@ function RegisterYourCatForm() {
         name: '', color: '', age: '', habits: ''
     });
 
-    const set = (name) => {
-        return ({ target: { value } }) => {
-            setValues(oldValues => ({ ...oldValues, [name]: value }));
-        }
+    const set = (name: string, value: string) => {
+        setValues(oldValues => ({ ...oldValues, [name]: value }));
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault(); // Prevent default submission
         try {
             // await saveFormData();
@@ -21,7 +19,7 @@ function RegisterYourCatForm() {
                 name: '', color: '', age: '', habits: ''
             });
             alert('Your registration was successfully submitted!' + JSON.stringify(values));
-        } catch (e) {
+        } catch (e: any) {
             alert(`Registration failed! ${e.message}`);
         }
     };
@@ -31,17 +29,17 @@ function RegisterYourCatForm() {
         <form onSubmit={onSubmit}>
             <h2>Register Your Cat</h2>
             <label>Name*:</label>
-            <input type="text" required value={values.name} onChange={set('name')} />
+            <input type="text" required value={values.name} onChange={(event) => set('name', event.target.value)} />
             <label>Color*:</label>
-            <select required value={values.color} onChange={set('color')}>
+            <select required value={values.color} onChange={(event) => set('color', event.target.value)}>
                 <option value="">Select color</option>
                 {COLORS.map(c => <option key={c}>{c}</option>)}
             </select>
             <label>Age*:</label>
-            <input type="number" required min="1" value={values.age} 
-            onChange={set('age')} />
+            <input type="number" required min="1" value={values.age}
+                onChange={(event) => set('age', event.target.value)} />
             <label>Habits:</label>
-            <textarea value={values.habits} onChange={set('habits')} />
+            <textarea value={values.habits} onChange={(event) => set('habits', event.target.value)} />
             <button type="submit">Submit</button>
         </form>
     );

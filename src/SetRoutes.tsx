@@ -17,6 +17,7 @@ import CounterRedux from './projects/Counter';
 import CounterMemorized from './projects/useMemo';
 import Responsive from './responsive/responsive';
 import CreatList  from './projects/createList';
+import DataGridDemo from './projects/grid/grid';
 
 const Contact = lazy(() => import('./page/Contact'));
 const TabApp = lazy(() => import('./projects/Tab/Tab'));
@@ -84,6 +85,7 @@ function SetRoutes() {
                 <Route path="/memorized" element={<CounterMemorized />} />Responsive
                 <Route path="/Responsive" element={<Responsive />} /> 
                 <Route path="/createlist" element={<CreatList />} />
+                <Route path="/grid" element={<DataGridDemo />} />
 
             </Routes>
         </BrowserRouter>
