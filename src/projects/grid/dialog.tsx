@@ -1,13 +1,14 @@
 import { Dialog } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
 
 type DialogType = {
     Opened: boolean,
     dataAdded: (data: any) => void
 };
-function DialogBox(props: DialogType) {
+const DialogBox: React.FC<DialogType> = (props:DialogType) => {
+
     let formData = {
         "fname": "",
         "lName": "",
@@ -23,9 +24,9 @@ function DialogBox(props: DialogType) {
     const handleClose = () => {
         setDailogOpen(false);
     };
-    const setData = (name: string, value: string) => {
-        const newJsonData = { ...fData, [name]: value };
-        setfDate(newJsonData);
+    const setData = (name: string, value: string) => { 
+        setfDate({ ...fData, [name]: value });
+        console.log('a');
     }
     const handleFData = () => {
         const dataToSend = fData;
@@ -39,15 +40,15 @@ function DialogBox(props: DialogType) {
             <Dialog open={dialogOpen} onClose={handleClose}>
                 <div style={{ height: '300px', width: '400px', backgroundColor: 'darkgreen' }}>
                     <label htmlFor="firstname">First Name:</label>
-                    <input type="text" value={fData.fname} required name='firstname' onChange={(event) => setData('fname', event.target.value)}></input>
+                    <input data-testid="fname-input" type="text" value={fData.fname} required id='firstname' onChange={(event) => setData('fname', event.target.value)}></input>
                     <br></br>
-                    <label htmlFor="username">Last Name:</label>
-                    <input type="text" value={fData.lName} required name='lastname' onChange={(event) => setData('lName', event.target.value)}></input>
+                    <label htmlFor="lastname">Last Name:</label>
+                    <input data-testid="lname-input" type="text" value={fData.lName} required id='lastname' onChange={(event) => setData('lName', event.target.value)}></input>
                     <br></br>
                     <label htmlFor="age">Age:</label>
-                    <input type="number" value={fData.age} required name="age" onChange={(event) => setData('age', event.target.value)}></input>
+                    <input data-testid="age-input" type="number" value={fData.age} required id="age" onChange={(event) => setData('age', event.target.value)}></input>
                 </div>
-                <button onClick={handleFData}>Save</button>
+                <button data-testid="Button-Save" onClick={handleFData}>Save</button>
             </Dialog>
         </>
     )
