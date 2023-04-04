@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import SetRoutes from './SetRoutes';
 import 'core-js/features/promise';
 import 'core-js/features/array/from';
+import 'core-js';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 

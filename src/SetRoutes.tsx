@@ -45,6 +45,19 @@ function SetRoutes() {
             tabContent:"<div>I am tab 3</div>"
         }
     ];
+    const menuConfig = [
+        {
+          title: 'Home',
+        },
+        {
+          title: 'Services',
+          subItems: ['Cooking', 'Cleaning'],
+        },
+        {
+          title: 'Contact',
+          subItems: ['Phone', 'Mail'],
+        },
+      ];
 
     const [isLoggedIn, setisLoggedIn] = useState(false);
     const logIn = () => {
@@ -84,7 +97,7 @@ function SetRoutes() {
                 <Route path="/reducerredux" element={<CounterRedux />} />
                 <Route path="/memorized" element={<CounterMemorized />} />Responsive
                 <Route path="/Responsive" element={<Responsive />} /> 
-                <Route path="/createlist" element={<CreatList />} />
+                <Route path="/createlist" element={<CreatList menuConfig={menuConfig} total={0}/>} />
                 <Route path="/grid" element={<DataGridDemo />} />
 
             </Routes>
