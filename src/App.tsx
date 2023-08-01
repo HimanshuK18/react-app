@@ -2,7 +2,7 @@ import './App.css';
 import { Link } from "react-router-dom";
 import { ProjectsPage, ProjectsPropsType } from './projects/ProjectsPage';
 import Clock from './projects/Clock';
-import { useState } from 'react';
+import { useState, Profiler  } from 'react';
 import { UserContext } from './projects/Context';
 // start again from https://handsonreact.com/docs/lists, and hooks in w3schools
 function App() {
@@ -10,10 +10,20 @@ function App() {
     name: "Himanshu",
     hobbies: "Hiking"
   };
-
+  function onRenderCallback(
+    id: any, // the "id" prop of the Profiler tree that has just committed
+    phase: any, // either "mount" (if the tree just mounted) or "update" (if it re-rendered)
+    actualDuration: any, // time spent rendering the committed update
+    baseDuration: any, // estimated time to render the entire subtree without memoization
+    startTime: any, // when React began rendering this update
+    commitTime: any, // when React committed this update
+    interactions: any // the Set of interactions belonging to this update
+  ) {
+    console.log(`${id} [${phase}] took ${actualDuration} ms`);
+  }
 
   const [user, setUser] = useState("Jesse Hall");
-  return (
+  return (<Profiler id="my-component" onRender={onRenderCallback}>
     <>
       <h5>I am Clock <Clock /></h5>
       <div className="App">
@@ -67,6 +77,12 @@ function App() {
             <li>
               <Link to="/grid">Grid</Link>
             </li>
+            <li>
+              <Link to="/map">Map</Link>
+            </li>
+            <li>
+              <Link to="/maps">Map Notes</Link>
+            </li>
           </ul>
         </nav>
         <h1>Hello, React!</h1>
@@ -77,7 +93,7 @@ function App() {
             </ProjectsPage>
         </UserContext.Provider>
       </div></>
-  );
+      </Profiler> );
 }
 
 export default App;

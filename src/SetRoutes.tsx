@@ -18,6 +18,8 @@ import CounterMemorized from './projects/useMemo';
 import Responsive from './responsive/responsive';
 import CreatList  from './projects/createList';
 import DataGridDemo from './projects/grid/grid';
+import MapContainer from './projects/mapmy/mymap';
+import Map from './projects/map/map';
 
 const Contact = lazy(() => import('./page/Contact'));
 const TabApp = lazy(() => import('./projects/Tab/Tab'));
@@ -99,6 +101,8 @@ function SetRoutes() {
                 <Route path="/Responsive" element={<Responsive />} /> 
                 <Route path="/createlist" element={<CreatList menuConfig={menuConfig} total={0}/>} />
                 <Route path="/grid" element={<DataGridDemo />} />
+                <Route path="/map" element={<MapContainer />} />
+                <Route path="/maps" element={<Map />} />
 
             </Routes>
         </BrowserRouter>

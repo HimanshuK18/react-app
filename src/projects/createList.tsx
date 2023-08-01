@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 
 type MenuItem = {
   title: string;
@@ -13,6 +13,7 @@ type ListItem = {
 
 const CreatList = ({ menuConfig }: { menuConfig: MenuConfig, total: number }) => {
   const [openMenu, setOpenMenu] = useState(null);
+  const passwordHintId = useId();
 
   const toggleSubMenu = (index: any) => {
     if (openMenu === index) {

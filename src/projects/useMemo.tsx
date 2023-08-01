@@ -9,7 +9,7 @@ const Button = React.memo((props: ButtonComponentProps) => {
     console.log(`${props.name} rendered`)
     return <button onClick={props.handleClick}>{props.name}</button>
 })
-
+//useCallback(fn, deps) is equivalent to useMemo(() => fn, deps)
 const CounterMemorized = () => {
     console.log('counter rendered');
     const [countOne, setCountOne] = useState(0);
