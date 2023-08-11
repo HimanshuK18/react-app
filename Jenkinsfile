@@ -12,10 +12,16 @@ pipeline {
         bat 'npm run image_build'
       }
     }
-    stage('Docker Push') {
-      steps {
-        bat 'docker push react-app-my'
-      }
+    stage('Upload to ECR using AWS ECR Plugin') {
+            steps {
+                ecrUpload(
+                    repositoryName: '<your-ecr-repository>',
+                    imagePath: ".",
+                    imageTag: 'latest',
+                    forcePathStyle: false
+                )
+                }
+            }
     }
   }
 }
