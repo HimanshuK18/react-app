@@ -1,15 +1,21 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine' 
-            args '-p 3000:3000' 
-        }
+  agent any
+  stages {
+    stage('Build the react app') {
+      steps {
+        sh 'npm install'
+        sh 'npm run build'
+      }
     }
-    stages {
-        stage('Build') { 
-            steps {
-                sh 'npm install' 
-            }
-        }
+    stage('Docker Image Build') {
+      steps {
+        sh 'npm run image_build'
+      }
     }
+    stage('Docker Push') {
+      steps {
+        sh 'docker push react-app-my'
+      }
+    }
+  }
 }
