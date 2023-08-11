@@ -3,18 +3,18 @@ pipeline {
   stages {
     stage('Build the react app') {
       steps {
-        sh 'npm install  --force'
-        sh 'npm run build'
+        bat 'npm install  --force'
+        bat 'npm run build'
       }
     }
     stage('Docker Image Build') {
       steps {
-        sh 'npm run image_build'
+        bat 'npm run image_build'
       }
     }
     stage('Docker Push') {
       steps {
-        sh 'docker push react-app-my'
+        bat 'docker push react-app-my'
       }
     }
   }
