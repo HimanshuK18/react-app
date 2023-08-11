@@ -22,6 +22,7 @@ function App() {
     console.log(`${id} [${phase}] took ${actualDuration} ms`);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [user, setUser] = useState("Jesse Hall");
   return (<Profiler id="my-component" onRender={onRenderCallback}>
     <>
