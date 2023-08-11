@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build the react app') {
       steps {
-        sh 'npm install'
+        sh 'npm install  --force'
         sh 'npm run build'
       }
     }
