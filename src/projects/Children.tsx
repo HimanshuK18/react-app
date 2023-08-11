@@ -1,6 +1,5 @@
 import ImageSlider from "./ImageSlider";
 import { usePasswordToggler } from '../hook/usePasswordToggler';
-import ComponentModal from '../../src/projects/Modal';
 
 export default function Children(props: any) {
     const { type, passwordVisibility, handlePasswordVisibility } = usePasswordToggler();

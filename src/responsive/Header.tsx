@@ -23,7 +23,8 @@ function Header() {
               <a
                 className="nasa_logo"
                 href="http://www.nasa.gov"
-                target="_blank"
+                target="_blank" 
+                rel="noopener noreferrer"
                 title="visit nasa.gov"
               >
                 NASA
@@ -33,7 +34,8 @@ function Header() {
               <a
                 className="top_logo"
                 href="https://science.nasa.gov/"
-                target="_blank"
+                target="_blank" 
+                rel="noopener noreferrer"
                 title="Explore NASA Science"
               >
                 NASA Science

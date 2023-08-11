@@ -13,6 +13,7 @@ type ListItem = {
 
 const CreatList = ({ menuConfig }: { menuConfig: MenuConfig, total: number }) => {
   const [openMenu, setOpenMenu] = useState(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const passwordHintId = useId();
 
   const toggleSubMenu = (index: any) => {

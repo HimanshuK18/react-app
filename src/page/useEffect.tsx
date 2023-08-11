@@ -1,4 +1,4 @@
-import { JSXElementConstructor, Key, useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 import { CatService } from '../services/catService';
 
 function Effect() {
@@ -7,6 +7,7 @@ function Effect() {
     useEffect(() => {
         (async () => {
             const response = await catService.getCatData();
+            // eslint-disable-next-line react-hooks/exhaustive-deps
             setData(employees = response.data);
         })();
 

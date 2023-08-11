@@ -15,6 +15,7 @@ function TodoCount() {
 }
 
 function TodoList() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [todos, setTodos] = React.useState(["item 1", "item 2", "item 3"]);
 
   return (

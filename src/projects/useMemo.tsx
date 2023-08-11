@@ -16,7 +16,7 @@ const CounterMemorized = () => {
     const [countTwo, setCountTwo] = useState(0);
     useMemo(() => { 
         console.log('hello'); }, 
-        [countOne]);
+        []);
     const memoizedSetCountOne = useCallback(() => setCountOne(countOne + 1), [countOne])
     const memoizedSetCountTwo = useCallback(() => setCountTwo(countTwo + 1), [countTwo])
     return (

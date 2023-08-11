@@ -11,7 +11,6 @@ function TabControl(props) {
   
 
   useEffect(() => {
-    const path = '../Clock.tsx';
     const loadComponent = async (index) => {
       const componentModule = await import(`${props.tabs[index].contentPath}`);
       setComponent(() => componentModule.default);

@@ -1,4 +1,3 @@
-import { PropsWithChildren } from 'react';
 import { Children } from 'react';
 
 export default function ImageSlider(props: any) {

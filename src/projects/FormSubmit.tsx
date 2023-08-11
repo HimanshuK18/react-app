@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import "./FormSubmit.css";
 
 const COLORS = ['white', 'red', 'blue', 'black', 'cream'];

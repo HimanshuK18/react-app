@@ -17,6 +17,7 @@ function DataGridDemo() {
     const newData = "Array.form('ssss')";
     const [open, setOpen] = useState(false);
     const [datarows, setRown] = useState(rows);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [strvalue, setstrvalue] = useState(newData);
     
     const addnew = () => {

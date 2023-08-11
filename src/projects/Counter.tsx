@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { increment, decrement } from "../redux/counterSlice";
+import { increment } from "../redux/counterSlice";
 import { giveEmoji } from "../redux/addEmojiSlice";
 
 function CounterRedux() {
